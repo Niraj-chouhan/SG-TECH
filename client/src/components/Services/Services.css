@@ -1,0 +1,110 @@
+.services-section {
+  width: 100%;
+  padding: 38px max(24px, calc((100% - 1520px) / 2)) 90px;
+  background: #fff;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto 100px;
+  color: #222124;
+  font: 700 52px/1.1 Georgia, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.section-heading::before,
+.section-heading::after {
+  width: min(12vw, 225px);
+  height: 4px;
+  background: #ffb000;
+  content: '';
+}
+
+.service-grid {
+  display: grid;
+  width: min(100%, 1498px);
+  margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 30px;
+  align-items: stretch;
+}
+
+.service-card {
+  display: flex;
+  min-width: 0;
+  min-height: 430px;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 26px 32px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, .095);
+  text-align: center;
+}
+
+.service-icon {
+  position: relative;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  place-items: center;
+  margin: 0 0 24px;
+  color: #ffb000;
+}
+
+.service-icon::before {
+  color: currentColor;
+  content: '⌘';
+  font: 400 82px/1 Arial, sans-serif;
+}
+
+.icon-0::before { content: '▱'; }
+.icon-1::before { content: '⚙'; }
+.icon-2::before { content: '♧'; }
+.icon-3::before { content: '▣'; }
+.icon-4::before { content: '⚙'; }
+.icon-5::before { content: '✎'; }
+.icon-6::before { content: '♧'; }
+.icon-7::before { content: '▧'; }
+.icon-8::before { content: '▣'; }
+
+.service-icon i,
+.service-icon b { display: none; }
+
+.service-card h3 {
+  margin: 0 0 28px;
+  color: #222124;
+  font: 700 40px/1.15 Georgia, 'Times New Roman', serif;
+}
+
+.service-card p {
+  max-width: 420px;
+  margin: 0;
+  color: #858585;
+  font: 400 24px/1.5 Georgia, 'Times New Roman', serif;
+}
+
+@media (max-width: 1050px) {
+  .services-section { padding: 55px 24px 76px; }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .service-card { min-height: 390px; padding-inline: 22px; }
+  .service-card h3 { font-size: 34px; }
+  .service-card p { font-size: 20px; }
+}
+
+@media (max-width: 600px) {
+  .services-section { padding: 48px 20px 58px; }
+  .section-heading { gap: 12px; margin-bottom: 45px; font-size: 34px; }
+  .section-heading::before,
+  .section-heading::after { width: 12vw; height: 3px; }
+  .service-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .service-card { min-height: 0; padding: 24px 20px 28px; }
+  .service-icon { width: 84px; height: 84px; flex-basis: 84px; margin-bottom: 18px; }
+  .service-icon::before { font-size: 64px; }
+  .service-card h3 { margin-bottom: 16px; font-size: 29px; }
+  .service-card p { font-size: 18px; }
+}

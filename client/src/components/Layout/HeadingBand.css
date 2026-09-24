@@ -1,0 +1,25 @@
+.heading-band {
+  position: relative;
+  height: 310px;
+  padding: 68px 14px 0;
+  background: #fff;
+}
+
+.heading-band h2 { margin: 0; color: #414141; font: 700 48px/1.2 Arial, sans-serif; }
+.heading-band::after {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 92px;
+  background: #222124;
+  clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%);
+  content: '';
+}
+
+@media (max-width: 650px) {
+  .heading-band { height: 240px; padding: 52px 20px 0; }
+  .heading-band h2 { font-size: clamp(28px, 8vw, 38px); }
+  .heading-band::after { height: 65px; }
+}

@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(690px, calc(100vh - 90px));
+  min-height: 640px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-copy {
+  position: absolute;
+  z-index: 1;
+  top: 145px;
+  left: min(9.75vw, 185px);
+  width: min(700px, calc(52% - 40px));
+}
+
+.hero h1 {
+  margin: 0;
+  color: #f9a900;
+  font: 400 43px/1.08 Georgia, 'Times New Roman', serif;
+  white-space: nowrap;
+}
+
+.hero h2 {
+  margin: 16px 0 0;
+  color: #242424;
+  font: 700 32px/1.2 Georgia, 'Times New Roman', serif;
+}
+
+.hero p {
+  width: 100%;
+  margin: 42px 0 0;
+  color: #10234d;
+  font: 400 17px/1.5 Georgia, 'Times New Roman', serif;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 14px 0 0 6px;
+}
+
+.social {
+  display: flex;
+  width: 38px;
+  height: 35px;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1.5px solid #f9a900;
+  color: #f9a900;
+  background: #fff;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.social:hover,
+.social:focus-visible {
+  color: #fff;
+  background: #f9a900;
+}
+
+.social svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social svg .fill { fill: currentColor; stroke: none; }
+.image-composition { position: absolute; inset: 0; pointer-events: none; }
+.orange-circle {
+  position: absolute;
+  z-index: 1;
+  top: 220px;
+  right: max(24px, calc((100% - 1897px) / 2 + 285px));
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  background: #ffb000;
+  display: none;
+}
+.portrait {
+  position: absolute;
+  z-index: 2;
+  top: 89px;
+  right: max(84px, calc((100% - 1897px) / 2 + 318px));
+  display: block;
+  width: 456px;
+  height: 583px;
+  object-fit: contain;
+}
+
+@media (max-width: 1500px) and (min-width: 1200px) {
+  .hero-copy { top: 125px; left: min(9.75vw, 140px); width: min(620px, 52%); }
+  .hero h1 { font-size: 43px; }
+  .hero h2 { font-size: 28px; }
+  .hero p { font-size: 17px; }
+  .orange-circle { top: 175px; right: max(12px, calc((100% - 1500px) / 2 + 72px)); width: 380px; height: 380px; }
+  .portrait { top: 45px; right: max(92px, calc((100% - 1500px) / 2 + 122px)); width: 340px; height: 435px; }
+}
+
+@media (max-width: 1199px) and (min-width: 901px) {
+  .hero { min-height: 620px; }
+  .desktop-break { display: none; }
+  .hero-copy { top: 145px; left: 5%; width: 54%; }
+  .hero h1 { font-size: 46px; }
+  .hero p { margin-top: 48px; font-size: 17px; line-height: 1.6; }
+  .socials { gap: 12px; margin-top: 16px; }
+  .social { width: 48px; height: 45px; flex-basis: 48px; }
+  .orange-circle { top: 145px; right: 2%; width: 330px; height: 330px; }
+  .portrait { top: 45px; right: calc(3% + 60px); width: 300px; height: 384px; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    display: flex;
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    padding: 70px 28px 36px;
+  }
+
+  .hero-copy { position: relative; inset: auto; width: 100%; max-width: 700px; margin-inline: auto; }
+  .hero h1 { font-size: clamp(38px, 7vw, 52px); white-space: normal; }
+  .hero p { margin-top: 32px; font-size: clamp(17px, 2.5vw, 19px); line-height: 1.6; }
+  .desktop-break { display: none; }
+  .socials { flex-wrap: wrap; gap: 12px; margin: 18px 0 0; }
+  .image-composition { position: relative; inset: auto; width: 100%; max-width: 490px; height: 480px; margin: 34px auto 0; overflow: hidden; }
+  .orange-circle { top: 66px; right: auto; left: 50%; width: min(320px, 100%); height: auto; aspect-ratio: 1; transform: translateX(-50%); }
+  .portrait { position: relative; inset: auto; width: min(100%, 290px); height: auto; margin: 0 auto; object-fit: contain; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 52px 20px 30px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 42px); }
+  .hero p { font-size: 17px; }
+  .socials { gap: 8px; }
+  .social { width: 46px; height: 44px; flex-basis: 46px; }
+  .social svg { width: 19px; height: 19px; }
+}

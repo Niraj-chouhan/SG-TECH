@@ -1,8 +1,8 @@
-import Home from './pages/Home'
+import Hero from './components/Home/Hero'
 import './App.css'
 
 function App() {
-  return <Home />
+  return <main className="page"><Hero /></main>
 }
 
 export default App

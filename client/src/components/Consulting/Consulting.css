@@ -1,0 +1,84 @@
+.consulting-section {
+  padding: 96px 32px 90px;
+  color: #fff;
+  background: #222124;
+}
+
+.consulting-grid {
+  display: grid;
+  width: min(100%, 1770px);
+  min-height: 586px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1.18fr 1.72fr 1.18fr 1fr;
+  grid-template-rows: repeat(2, 272px);
+  grid-template-areas:
+    'purpose mentorship intro seminar startup'
+    'career workshop intro consulting infrastructure';
+  gap: 42px 56px;
+  align-items: center;
+}
+
+.consult-card {
+  display: flex;
+  min-width: 0;
+  min-height: 272px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 24px 14px;
+  border: 2px solid #ffb000;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.consult-card:nth-of-type(2),
+.consult-card:nth-of-type(3),
+.consult-card:nth-of-type(6),
+.consult-card:nth-of-type(7) {
+  min-height: 208px;
+  align-self: center;
+  border-color: #434222;
+  box-shadow: 0 0 18px rgba(255, 176, 0, .15);
+}
+
+.consult-icon { color: #ffb000; font: 400 46px/1 Arial, sans-serif; }
+.consult-card h3 { margin: 0; color: #fff; font: 700 28px/1.35 Georgia, 'Times New Roman', serif; }
+.purpose { grid-area: purpose; }
+.mentorship { grid-area: mentorship; }
+.seminar { grid-area: seminar; }
+.startup { grid-area: startup; }
+.career { grid-area: career; }
+.workshop { grid-area: workshop; }
+.consulting { grid-area: consulting; }
+.infrastructure { grid-area: infrastructure; }
+
+.consult-intro {
+  grid-area: intro;
+  max-width: 440px;
+  justify-self: center;
+  text-align: center;
+}
+
+.consult-intro h2 { margin: 0; color: #ffb000; font: 400 38px/1.1 Arial, sans-serif; }
+.intro-rule { display: block; width: 66px; height: 3px; margin: 16px 0 38px; background: #ffb000; }
+.consult-intro p { margin: 0; color: #fff; font: 400 22px/1.65 Georgia, 'Times New Roman', serif; text-align: justify; }
+
+@media (max-width: 1200px) {
+  .consulting-section { padding: 76px 24px; }
+  .consulting-grid { min-height: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto; grid-template-areas: 'intro intro intro' 'purpose mentorship seminar' 'startup career workshop' 'consulting infrastructure infrastructure'; gap: 22px; }
+  .consult-card { min-height: 190px; }
+  .consult-intro { max-width: 680px; padding-bottom: 24px; }
+  .consult-intro p { text-align: center; }
+}
+
+@media (max-width: 650px) {
+  .consulting-section { padding: 58px 20px; }
+  .consulting-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'intro' 'purpose' 'mentorship' 'seminar' 'startup' 'career' 'workshop' 'consulting' 'infrastructure'; gap: 16px; }
+  .consult-intro { padding-bottom: 16px; }
+  .consult-intro h2 { font-size: 30px; }
+  .consult-intro p { font-size: 18px; }
+  .intro-rule { margin: 14px auto 24px; }
+  .consult-card { min-height: 150px; gap: 18px; }
+  .consult-card h3 { font-size: 24px; }
+}

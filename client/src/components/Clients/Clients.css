@@ -1,0 +1,47 @@
+.clients-section {
+  padding: 34px 30px 78px;
+  background: #fff;
+}
+
+.clients-section .section-heading { margin-bottom: 120px; }
+.clients-section .section-heading::before,
+.clients-section .section-heading::after { width: min(10vw, 170px); }
+.client-logo-row {
+  display: grid;
+  width: min(100%, 1830px);
+  min-height: 158px;
+  margin: 0 auto;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+}
+.client-logo-slot { display: grid; min-width: 0; height: 158px; place-items: center; }
+.client-logo-slot img { width: 100%; height: 100%; object-fit: contain; }
+.client-arrow { display: grid; width: 30px; height: 50px; place-items: center; padding: 0; border: 0; color: #242424; background: transparent; font: 400 48px/1 Arial, sans-serif; cursor: pointer; }
+.client-arrow:hover, .client-arrow:focus-visible { color: #ffb000; }
+.client-dots { display: flex; justify-content: center; gap: 22px; margin: 22px 0 62px; }
+.client-dots button { width: 12px; height: 12px; padding: 0; border: 0; border-radius: 50%; background: #222124; cursor: pointer; }
+.client-dots button:hover, .client-dots button:focus-visible { outline: 2px solid #ffb000; outline-offset: 3px; }
+.client-dots button.active { background: #ffb000; }
+.second-row { width: min(100% - 80px, 1590px); grid-template-columns: 30px repeat(5, minmax(0, 1fr)) 30px; }
+
+@media (max-width: 900px) {
+  .clients-section .section-heading { margin-bottom: 65px; }
+  .client-logo-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .client-logo-row .client-logo-slot:nth-of-type(n+4) { display: none; }
+  .second-row { grid-template-columns: 24px repeat(3, minmax(0, 1fr)) 24px; }
+  .second-row .client-logo-slot:nth-of-type(n+4) { display: none; }
+}
+
+@media (max-width: 560px) {
+  .clients-section { padding: 48px 20px 56px; }
+  .clients-section .section-heading { gap: 8px; margin-bottom: 42px; font-size: clamp(28px, 8vw, 33px); }
+  .clients-section .section-heading::before,
+  .clients-section .section-heading::after { width: 8vw; }
+  .client-logo-row { grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 120px; }
+  .client-logo-row .client-logo-slot:nth-of-type(n+3) { display: none; }
+  .client-logo-slot { height: 84px; }
+  .client-dots { gap: 12px; margin: 14px 0 38px; }
+  .second-row { width: 100%; grid-template-columns: 24px repeat(2, minmax(0, 1fr)) 24px; }
+  .second-row .client-logo-slot:nth-of-type(n+3) { display: none; }
+}

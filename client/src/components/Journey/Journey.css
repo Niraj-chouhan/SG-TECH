@@ -1,0 +1,124 @@
+.journey-section {
+  padding: 42px max(22px, calc((100% - 1590px) / 2)) 56px;
+  background: #fff;
+  color: #242424;
+}
+
+.journey-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 14px;
+  color: #f9a900;
+  font: 700 17px/1.3 Georgia, 'Times New Roman', serif;
+}
+
+.journey-eyebrow::after {
+  width: 112px;
+  height: 1px;
+  background: #666;
+  content: '';
+}
+
+.journey-section > h2 {
+  margin: 0 0 48px;
+  color: #242424;
+  font: 700 clamp(32px, 2.5vw, 44px)/1.15 Georgia, 'Times New Roman', serif;
+}
+
+.milestone-grid {
+  display: grid;
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 38px 40px;
+  align-items: stretch;
+}
+
+.milestone {
+  position: relative;
+  min-width: 0;
+  min-height: 320px;
+  padding: 94px 22px 26px;
+  border: 1px solid #e7a900;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .045);
+}
+
+.milestone-year {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  display: grid;
+  width: 104px;
+  height: 104px;
+  transform: translateX(-50%);
+  place-items: center;
+  border-radius: 50%;
+  color: #202020;
+  background: #fff;
+  font: 700 23px/1 Georgia, 'Times New Roman', serif;
+}
+
+.milestone-year::before {
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #df795f;
+  border-radius: 50%;
+  content: '';
+}
+
+.milestone-year span {
+  position: relative;
+  z-index: 1;
+}
+
+.milestone-year::after {
+  position: absolute;
+  inset: -8px;
+  border: 1px solid #65794e;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 8% 50%, #df795f 0 3px, transparent 3.5px),
+    radial-gradient(circle at 100% 50%, #65794e 0 3px, transparent 3.5px);
+  content: '';
+}
+
+.milestone-logo {
+  display: block;
+  width: min(100%, 148px);
+  height: 78px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+}
+
+.milestone p {
+  margin: 0;
+  color: #303030;
+  font: 400 15px/1.45 Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .journey-section { padding: 38px 28px 50px; }
+  .journey-section > h2 { margin-bottom: 44px; font-size: clamp(30px, 4vw, 40px); }
+  .milestone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 24px; }
+  .milestone { min-height: 300px; padding: 92px 20px 24px; }
+  .milestone-logo { height: 72px; margin-bottom: 14px; }
+  .milestone p { font-size: 14px; }
+}
+
+@media (max-width: 650px) {
+  .journey-section { padding: 34px 22px 44px; }
+  .journey-eyebrow { gap: 14px; margin-bottom: 12px; font-size: 16px; }
+  .journey-eyebrow::after { width: 84px; }
+  .journey-section > h2 { margin-bottom: 42px; font-size: clamp(28px, 8vw, 36px); }
+  .milestone-grid { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .milestone { min-height: 0; padding: 86px 22px 20px; }
+  .milestone p { font-size: 15px; }
+}
