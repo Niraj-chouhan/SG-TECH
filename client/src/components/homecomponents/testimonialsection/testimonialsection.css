@@ -1,0 +1,195 @@
+.testimonial-section {
+  display: grid;
+  width: min(calc(100% - 48px), 1400px);
+  min-height: clamp(580px, 78svh, 680px);
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 32px 0 40px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 110px);
+}
+
+.testimonial-copy {
+  position: relative;
+  padding-left: clamp(70px, 8vw, 112px);
+}
+
+.testimonial-rule {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background: #ffb000;
+}
+
+.testimonial-copy h2 {
+  margin: 0 0 24px;
+  color: #222124;
+  font: 800 clamp(42px, 4vw, 56px)/1.22 Arial, sans-serif;
+}
+
+.learn-more {
+  display: inline-flex;
+  min-width: 176px;
+  min-height: 56px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffb000;
+  color: #ffb000;
+  font: 400 19px/1 Arial, sans-serif;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.learn-more:hover,
+.learn-more:focus-visible {
+  color: #fff;
+  background: #ffb000;
+}
+
+.testimonial-showcase {
+  display: flex;
+  width: min(100%, 420px);
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.testimonial-card {
+  display: flex;
+  width: 100%;
+  min-height: 390px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 38px 44px 54px;
+  border-radius: 13px;
+  color: #fff;
+  background: #222124;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .14);
+  animation: testimonial-enter 460ms ease both;
+}
+
+.quote-mark {
+  height: 68px;
+  color: #ffb000;
+  font: 400 70px/.9 Georgia, 'Times New Roman', serif;
+}
+
+.testimonial-card p {
+  width: 100%;
+  max-width: 330px;
+  margin: 10px 0 0;
+  color: #fff;
+  font: 400 17px/1.5 Georgia, 'Times New Roman', serif;
+  overflow-wrap: anywhere;
+}
+
+.testimonial-avatar {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 86px;
+  height: 86px;
+  box-sizing: border-box;
+  flex: 0 0 86px;
+  place-items: center;
+  margin-top: -34px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: #ffb000;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+}
+
+.testimonial-avatar::before {
+  position: absolute;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  content: '';
+}
+
+.testimonial-avatar span {
+  position: absolute;
+  bottom: 9px;
+  width: 58px;
+  height: 32px;
+  border-radius: 50% 50% 42% 42%;
+  background: #fff;
+}
+
+.testimonial-name {
+  margin: 22px 0 0;
+  color: #222124;
+  font: 700 21px/1.2 Arial, sans-serif;
+  text-align: center;
+}
+
+.testimonial-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.testimonial-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffb000;
+  cursor: pointer;
+  transition: width 160ms ease, background-color 160ms ease;
+}
+
+.testimonial-dots button.selected {
+  width: 17px;
+  border-radius: 8px;
+  background: #222124;
+}
+
+.testimonial-dots button:focus-visible { outline: 2px solid #ffb000; outline-offset: 3px; }
+
+@keyframes testimonial-enter {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+  .testimonial-section {
+    min-height: 0;
+    padding: 52px 0 74px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .testimonial-copy { width: min(100%, 560px); justify-self: center; }
+  .testimonial-showcase { width: min(100%, 420px); }
+}
+
+@media (max-width: 600px) {
+  .testimonial-section { width: calc(100% - 40px); padding: 42px 0 72px; gap: 34px; }
+  .testimonial-copy { padding-left: 34px; }
+  .testimonial-rule { top: 20px; width: 24px; height: 2px; }
+  .testimonial-copy h2 { margin-bottom: 18px; font-size: clamp(36px, 9vw, 46px); }
+  .learn-more { min-width: 150px; min-height: 48px; font-size: 17px; }
+  .testimonial-card { min-height: 340px; padding: 30px 26px 46px; }
+  .quote-mark { height: 58px; font-size: 60px; }
+  .testimonial-card p { font-size: 16px; }
+  .testimonial-avatar { width: 76px; height: 76px; flex-basis: 76px; margin-top: -30px; }
+  .testimonial-avatar::before { top: 8px; width: 29px; height: 29px; }
+  .testimonial-avatar span { bottom: 7px; width: 51px; height: 28px; }
+  .testimonial-name { margin-top: 18px; font-size: 19px; }
+  .testimonial-dots { margin-top: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card { animation: none; }
+}
