@@ -1,0 +1,9 @@
+.journey-page .journey-section {
+  min-height: calc(100vh - 90px);
+  padding-top: 64px;
+  padding-bottom: 76px;
+}
+
+@media (max-width: 900px) {
+  .journey-page .journey-section { min-height: calc(100vh - 82px); padding-top: 46px; }
+}
